@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    color: rgb(21, 74, 114);
+    font-weight: 500;
+}
