@@ -1,3 +1,11 @@
+
+function callBack() {
+document.getElementById("name").value=addTask()
+document.getElementById("date").value=addTask()
+document.getElementById("assign-to").value=addTask()
+}
+submit.addEventListener('click',callBack)
+
 function validFormFieldInput(data) {
   const nameInput = document.querySelector('#nameInput');
   const name = nameInput.value;
@@ -112,3 +120,4 @@ document.getElementById('subbutton').innerHTML = "";
 
     class="form-group
     class="form-control */
+

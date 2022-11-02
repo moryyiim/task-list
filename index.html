@@ -24,7 +24,7 @@
   </head>
   <body>
     <section>
-      <form class="vh-100 mt-5">
+      <form class="vh-100 mt-5" id="error">
         <div
           class="container d-flex flex-column align-items-center justify-content-center h-100"
         >
@@ -74,10 +74,16 @@
                     </div>
                   </div>
                 </div>
+
+
+                <div>
+                  <button id="submit" class="btn btn-primary w-100">Submit Task</button>
+
                     
                 <div class="alert alert-warning alert-dismissible fade show open" role="alert">
                   <button class="btn btn-primary w-100" type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>Submit</button>
+
                 </div>
               </div>
 
@@ -169,5 +175,7 @@
         </div>
       </form>
     </section>
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
