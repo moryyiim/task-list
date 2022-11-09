@@ -1,41 +1,49 @@
-
 function callBack() {
-document.getElementById("name").value=addTask()
-document.getElementById("date").value=addTask()
-document.getElementById("assign-to").value=addTask()
+  document.getElementById('name').value = addTask();
+  document.getElementById('date').value = addTask();
+  document.getElementById('assign-to').value = addTask();
 }
-submit.addEventListener('click',callBack)
+submit.addEventListener('click', callBack);
 
-function validFormFieldInput(data) {
-  const nameInput = document.querySelector('#nameInput');
-  const name = nameInput.value;
-    console.log("name: "+name);
+function validFormFieldInput(data) {}
 
-  const descInput = document.querySelector('#descInput');
-  const description = descInput.value;
-    console.log("name: "+description);
+// Name
+const nameInput = document.querySelector('#name-input');
+const formName = nameInput.value;
+console.log('Name: ' + formName);
 
-  const assignTo = document.querySelector('assignTo');
-  const assignto = assignTo.value;
-    console.log("name: "+assignto);
+// Description
+const descInput = document.querySelector('#text-area');
+const description = descInput.value;
+console.log('Description: ' + description);
 
-  const dateInput = document.querySelector('#dateInput');
-  const date = dateInput.value;
-    console.log("name: "+date);
-};
+// Assignment
+const assignTo = document.querySelector('#assign-to');
+const assignment = assignTo.value;
+console.log('Assign To: ' + assignment);
 
-   function open(){
-    document.getElementById('open').innerHTML = '';
-     }
-   function close(){
-    document.getElementById('close').innerHTML = " ";
-     };
-  
+// Date
+const dateInput = document.querySelector('#date-input');
+const date = dateInput.value;
+console.log('Date: ' + date);
 
+function open() {
+  document.getElementById('open').innerHTML = '';
+}
+function close() {
+  document.getElementById('close').innerHTML = ' ';
+}
 
+// Arrow functions do not work for onclick properties
 
-
-
+function formAlert() {
+  e.preventDefault();
+  if (formName === '') {
+    alert('PINGAS');
+  } else {
+    alert('pingatas');
+  }
+}
 
 /* function validFormFieldInput(data) {
 
@@ -120,4 +128,3 @@ document.getElementById('subbutton').innerHTML = "";
 
     class="form-group
     class="form-control */
-

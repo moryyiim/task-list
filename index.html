@@ -24,6 +24,9 @@
   </head>
   <body>
     <section>
+
+<!-- FORM -->
+
       <form class="vh-100 mt-5" id="error">
         <div
           class="container d-flex flex-column align-items-center justify-content-center h-100"
@@ -42,8 +45,8 @@
 
               <div>
                 <div class="form-group d-flex flex-column">
-                  <label for="name">Name</label>
-                  <input class="form-control" id="name" type="text" />
+                  <label for="name-input">Name</label>
+                  <input class="form-control" name="name-input" id="name-input" type="text" />
                 </div>
 
                 <br />
@@ -65,34 +68,33 @@
                   <div class="row w-100">
                     <div class="col d-flex flex-column">
                       <label for="assign-to">Assign To:</label>
-                      <input class="form-control" id="assign-to" type="text" />
+                      <input class="form-control" name='assign-to' id="assign-to" type="text" />
                     </div>
 
                     <div class="col d-flex flex-column mb-5">
-                      <label for="date">Due Date</label>
-                      <input class="form-control" id="date" type="date" />
+                      <label for="date-input">Due Date</label>
+                      <input class="form-control" name="date-input" id="date-input" type="date" />
                     </div>
                   </div>
                 </div>
 
+                
+<!-- SUBMIT BUTTON -->
 
                 <div>
-                  <button id="submit" class="btn btn-primary w-100">Submit Task</button>
-
-                    
-                <div class="alert alert-warning alert-dismissible fade show open" role="alert">
-                  <button class="btn btn-primary w-100" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>Submit</button>
-
+                  <button id="submit" class="btn btn-primary w-100" onclick="formAlert()">Submit Task</button>
                 </div>
-              </div>
+                
+              
 
-              <div>
-                <h4 class="my-5">New Task</h4>
-              </div>
 
               
-              
+             
+<!-- LIST CARDS -->
+
+            <div>
+              <h4 class="my-5">New Task</h4>
+            </div>
 
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -168,6 +170,10 @@
                     </li>
                   </ul>
 
+<!-- END LIST CARDS -->
+
+
+
                 </div>
               </div>
             </div>
@@ -175,7 +181,15 @@
         </div>
       </form>
     </section>
-    <script src="js/taskManager.js"></script>
-    <script src="js/index.js"></script>
+
+
+
+<!-- END FORM -->
+
+
+
+    
+    <script src="./js/taskManager.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
