@@ -4,192 +4,138 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
+    <title>Group 2: Task List</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
-    <script 
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
-      crossorigin="anonymous">
-    </script>
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <script defer src="./js.index.js"></script>
-    <title>Task List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
   </head>
+
   <body>
-    <section>
-
-<!-- FORM -->
-
-      <form class="vh-100 mt-5" id="error">
-        <div
-          class="container d-flex flex-column align-items-center justify-content-center h-100"
-        >
-          <div
-            class="row d-flex justify-content-center align-items-center w-100 h-100"
-          >
-            <div class="col col-lg-8 col-xl-6">
-              <div>
-                <h1 class="title mb-5">Task list</h1>
-              </div>
-
-              <div>
-                <h4 class="mb-5">New Task</h4>
-              </div>
-
-              <div>
-                <div class="form-group d-flex flex-column">
-                  <label for="name-input">Name</label>
-                  <input class="form-control" name="name-input" id="name-input" type="text" />
-                </div>
-
-                <br />
-
-                <div class="form-group d-flex flex-column">
-                  <label for="text-area">Description</label>
-                  <textarea
-                    class="form-control description w-100"
-                    name="textarea"
-                    id="text-area"
-                    cols="30"
-                    rows="3"
-                  ></textarea>
-                </div>
-
-                <br />
-
-                <div class="form-group d-flex">
-                  <div class="row w-100">
-                    <div class="col d-flex flex-column">
-                      <label for="assign-to">Assign To:</label>
-                      <input class="form-control" name='assign-to' id="assign-to" type="text" />
-                    </div>
-
-                    <div class="col d-flex flex-column mb-5">
-                      <label for="date-input">Due Date</label>
-                      <input class="form-control" name="date-input" id="date-input" type="date" />
-                    </div>
-                  </div>
-                </div>
-
-                
-<!-- SUBMIT BUTTON -->
-
-                <div>
-                  <button id="submit" class="btn btn-primary w-100" onclick="formAlert()">Submit Task</button>
-                </div>
-                
-              
-
-
-              
-             
-<!-- LIST CARDS -->
-
-            <div>
-              <h4 class="my-5">New Task</h4>
-            </div>
-
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <h5 class="card-title">Task 1</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Task 1 description</h6>
-                            <h6>Santiago Carillo</h6>
-                            <p class="card-text">Due Date: Aug 20 - 2020</p>
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                  <span class="badge bg-primary">IN PROGRESS</span>
-                                </div>
-                                <button class="btn btn-primary text-white">DELETE</button>
-                            </div>
-                  </li>
-
-
-
-                  <li class="list-group-item">
-                    <h5 class="card-title">Task 2</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Task 2 description</h6>
-                    <h6>Santiago Carillo</h6>
-                    <p class="card-text">Due Date: Sep 20 - 2020</p>
-                    <div class="d-flex justify-content-between">
-                        <div>
-                          <span class="badge bg-success">DONE</span>
-                        </div>
-                        <button class="btn btn-primary text-white">DELETE</button>
-                    </div>
-                  </li>
-
-
-
-                  <li class="list-group-item">
-                    <h5 class="card-title">Task 3</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Task 3 description</h6>
-                            <h6>Santiago Carillo</h6>
-                            <p class="card-text">Due Date: Feb 20 - 2020</p>
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                  <span class="badge bg-warning text-dark">PENDING</span>
-                                </div>
-                                <button class="btn btn-primary text-white">DELETE</button>
-                            </div>
-                  </li>
-
-
-
-                  <li class="list-group-item">
-                    <h5 class="card-title">Task 4</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Task 4 description</h6>
-                            <h6>Santiago Carillo</h6>
-                            <p class="card-text">Due Date: Aug 20 - 2020</p>
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                  <span class="badge bg-success">DONE</span>
-                                </div>
-                                <button class="btn btn-primary text-white">DELETE</button>
-                            </div>
-                  </li>
-
-
-                  <li class="list-group-item">
-                    <h5 class="card-title">Task 5</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Task 5 description</h6>
-                            <h6>Santiago Carillo</h6>
-                            <p class="card-text">Due Date: Oct 15 - 2020</p>
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                  <span class="badge bg-danger">WILL NOT DO</span>
-                                </div>
-                                <button class="btn btn-primary text-white">DELETE</button>
-                            </div>
-                    </li>
-                  </ul>
-
-<!-- END LIST CARDS -->
-
-
-
-                </div>
-              </div>
-            </div>
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center h-100 mt-5"
+    >
+      <div
+        class="row d-flex justify-content-center align-items-center w-100 h-100"
+      >
+        <div class="col col-lg-8 col-xl-6">
+          <div class="text-start">
+            <h2 class="fw-bold">Task List</h2>
           </div>
+
+          <!-- FORM -->
+
+          <form id="form" class="needs-validation mt-5" novalidate>
+            <!-- TASK NAME -->
+
+            <div class="row gap-4">
+              <div class="d-flex flex-column">
+                <label for="taskName">Task Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="taskName"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a task name</div>
+              </div>
+
+              <!-- TASK DESCRIPTION -->
+
+              <div class="d-flex flex-column">
+                <label for="description">Task Description</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  rows="6"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">Please give a description</div>
+              </div>
+
+              <!-- ASSIGNMENT -->
+
+              <div class="form-group gap-2 d-flex">
+                <div class="col d-flex flex-column">
+                  <label for="assignTo">Assign To</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="assignTo"
+                    required
+                  />
+                  <div class="invalid-feedback">Please assign the task</div>
+                </div>
+
+                <!-- DUE DATE -->
+
+                <div class="col d-flex flex-column">
+                  <label for="date">Due Date</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="date"
+                    required
+                    id="validationCustom01"
+                  />
+                  <div class="invalid-feedback">Please select a date</div>
+                </div>
+              </div>
+
+              <!-- TASK STATUS -->
+
+              <div class="col-md-4">
+                <label for="taskStatus">Status</label>
+                <select
+                  class="form-control"
+                  id="taskStatus"
+                  class="form-control"
+                  required
+                >
+                  <option value="">Choose Status</option>
+                  <option value="1">To Do</option>
+                  <option value="2">In Progress</option>
+                  <option value="3">Review</option>
+                  <option value="4">Done</option>
+                </select>
+                <div class="invalid-feedback">Please select a status</div>
+              </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+
+            <div class="text-center mt-5">
+              <button
+                id="submit-btn"
+                type="submit"
+                class="btn btn-primary w-100"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </section>
+      </div>
+    </div>
 
+    <br />
 
+    <ul id="taskList" class="list-group container align-items-center"></ul>
 
-<!-- END FORM -->
-
-
-
-    
-    <script src="./js/taskManager.js"></script>
-    <script src="./js/index.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/taskManager.js"></script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>
