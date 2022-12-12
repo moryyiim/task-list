@@ -1,5 +1,6 @@
 // Connection successful
 console.log('CONNECTION SUCCESSFUL');
+const taskManager = new TaskManager(0);
 
 // Selecting form inputs
 
@@ -45,5 +46,24 @@ form.addEventListener('submit', (e) => {
     alert('Please select a date');
   } else {
     return;
+  }
+});
+
+const taskList = document.querySelector('#taskList');
+taskList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('done-button') === true) {
+    const parentTask = event.target.parentElement.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+    const task = taskManager.getTaskById(taskId);
+    task.status = 'DONE';
+    taskManager.save();
+    taskManager.render();
+  }
+  if (event.target.classList.contains('delete-button') === true) {
+    const parentTask = event.target.parentElement.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+    taskManager.deleteTask(taskId);
+    taskManager.save();
+    taskManager.render();
   }
 });
