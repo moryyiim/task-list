@@ -1,7 +1,13 @@
 // declare variables
 const taskManager = new TaskManager();
-taskManager.load();
-taskManager.render();
+
+if (
+  localStorage.getItem('tasks') !== null &&
+  localStorage.getItem('currentId') !== null
+) {
+  taskManager.load();
+  taskManager.render(0);
+}
 
 const name = document.querySelector('#taskName');
 const assignedTo = document.querySelector('#assignTo');
