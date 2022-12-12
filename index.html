@@ -11,10 +11,6 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
@@ -27,7 +23,15 @@
       >
         <div class="col col-lg-8 col-xl-6">
           <div class="text-start">
-            <h2 class="fw-bold">Task List</h2>
+            <div class="d-flex">
+              <h2 class="fw-bold">Task List</h2>
+              <img
+                style="width: 2.5rem; height: 2.5rem"
+                class="pencil"
+                src="https://www.onlygfx.com/wp-content/uploads/2016/03/hand-drawn-pencil-icon-264x300.png"
+              />
+            </div>
+            <h3>Add Task</h3>
           </div>
 
           <!-- FORM -->
@@ -65,12 +69,14 @@
               <div class="form-group gap-2 d-flex">
                 <div class="col d-flex flex-column">
                   <label for="assignTo">Assign To</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="assignTo"
-                    required
-                  />
+
+                  <select class="form-control" name="" id="assignTo" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="James">James</option>
+                    <option value="Kynnedi">Kynnedi</option>
+                    <option value="Shamel">Shamel</option>
+                    <option value="Mory">Mory</option>
+                  </select>
                   <div class="invalid-feedback">Please assign the task</div>
                 </div>
 
@@ -78,13 +84,7 @@
 
                 <div class="col d-flex flex-column">
                   <label for="date">Due Date</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="date"
-                    required
-                    id="validationCustom01"
-                  />
+                  <input type="date" class="form-control" id="date" required />
                   <div class="invalid-feedback">Please select a date</div>
                 </div>
               </div>
@@ -93,17 +93,14 @@
 
               <div class="col-md-4">
                 <label for="taskStatus">Status</label>
-                <select
-                  class="form-control"
-                  id="taskStatus"
-                  class="form-control"
-                  required
-                >
+                <select id="taskStatus" class="form-control" required>
                   <option value="">Choose Status</option>
-                  <option value="1">To Do</option>
-                  <option value="2">In Progress</option>
-                  <option value="3">Review</option>
-                  <option value="4">Done</option>
+                  <option value="To Do">To Do</option>
+                  <option class="btn-warning" value="In Progress">
+                    In Progress
+                  </option>
+                  <option class="btn-danger" value="Review">Review</option>
+                  <option class="btn-success" value="Done">Done</option>
                 </select>
                 <div class="invalid-feedback">Please select a status</div>
               </div>
@@ -121,13 +118,23 @@
               </button>
             </div>
           </form>
+
+          <!-- TASK CARDS -->
+          <section class="container-fluid p-0">
+            <h2 class="mt-5">Tasks</h2>
+
+            <ul
+              id="taskList"
+              class="list-group container row justify-content-center mx-2 p-0"
+            ></ul>
+          </section>
         </div>
       </div>
     </div>
 
     <br />
 
-    <ul id="taskList" class="list-group container align-items-center"></ul>
+    <!-- <ul id="taskList" class="list-group container align-items-center"></ul> -->
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -138,4 +145,4 @@
     <script src="assets/js/taskManager.js"></script>
     <script src="assets/js/index.js"></script>
   </body>
-</html>
+</html

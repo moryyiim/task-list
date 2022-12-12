@@ -1,7 +1,9 @@
+// creates tasks to be inserted into the ul
+
 const createTaskHtml = (id, name, description, assignedTo, date, status) => {
   const html = `   
-    <li class="list-group-item" data-task-id=${id}>
-    <div class="card bg-light" style="width: 18rem">
+    <li class="list-group-item mt-3 mb-1" data-task-id=${id}>
+    <div class="card bg-light border-secondary border-opacity-50" style="width: 25rem">
        <div class="card-body">
          <div class="row">
          <h5 class="col-sm-8 card-title">${name}</h5>
@@ -36,28 +38,64 @@ class TaskManager {
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: 'TODO',
+      status: status,
     };
     this.tasks.push(task);
-    render() {
-      let tasksHtmlList = [];
-      for (let i = 0; i < this.tasks.length; i++) {
-        let currentTask = this.tasks[i];
-        const currentDate = new Date(currentTask.dueDate);
-        let formattedDate = currentDate.toDateString();
-        let taskHtml = createTaskHtml(
-          this.tasks[i].id,
-          this.tasks[i].name,
-          this.tasks[i].description,
-          this.tasks[i].assignedTo,
-          formattedDate,
-          this.tasks[i].status
-        );
-        tasksHtmlList.push(taskHtml);
-      }
-      const tasksHtml = tasksHtmlList.join('\n');
-      const taskList = document.getElementById('taskList');
-      taskList.innerHTML = tasksHtml;
+  }
+  render() {
+    let tasksHtmlList = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      let currentTask = this.tasks[i];
+      const currentDate = new Date(currentTask.dueDate);
+      let formattedDate = currentDate.toDateString();
+      let taskHtml = createTaskHtml(
+        this.tasks[i].id,
+        this.tasks[i].name,
+        this.tasks[i].description,
+        this.tasks[i].assignedTo,
+        formattedDate,
+        this.tasks[i].status
+      );
+      tasksHtmlList.push(taskHtml);
     }
+    const tasksHtml = tasksHtmlList.join('\n');
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = tasksHtml;
+  }
+  getTaskById(taskId) {
+    let foundTask = taskId;
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
+      if (task.id === taskId) {
+        foundTask = task;
+      }
+    }
+    return foundTask;
+  }
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+    const currentId = JSON.stringify(this.currentId);
+    localStorage.setItem('currentId', currentId);
+  }
+  load() {
+    if (localStorage.getItem('tasks')) {
+      const tasksJson = localStorage.getItem('tasks');
+      this.tasks = JSON.parse(tasksJson);
+    }
+    if (localStorage.getItem('currentId')) {
+      const currentId = localStorage.getItem('currentId');
+      this.currentId = Number(currentId);
+    }
+  }
+  deleteTask(taskId) {
+    let newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
+      if (task.id != taskId) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
   }
 }
